@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/degradado_green"
+    tools:context=".DetailCourseBlockMainActivity">
+
+    <!-- Banner de la imagen -->
+    <ImageView
+        android:id="@+id/bannerImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/node_js"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"/>
+
+    <!-- Línea horizontal -->
+    <View
+        android:id="@+id/vwLine"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@id/bannerImage"
+        app:layout_constraintBottom_toBottomOf="@id/linearButtons"
+        android:background="@color/black"/>
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/vwLine"
+        app:layout_constraintStart_toStartOf="@id/linearDescription"
+        android:src="@drawable/logo_nodejs"/>
+
+    <!-- Título y botones -->
+    <LinearLayout
+        android:id="@+id/linearButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintTop_toBottomOf="@id/bannerImage"
+        app:layout_constraintStart_toEndOf="@id/imgLogo">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="23dp"
+            android:text="NODE JS"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+        <Button
+            android:id="@+id/btnReproducir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/button_gray"
+            android:textColor="@color/black"
+            android:text="Reproducir"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/btnPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/button_gray"
+            android:textColor="@color/black"
+            android:text="S/ 120.00"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+    </LinearLayout>
+
+    <!-- Descripción -->
+    <LinearLayout
+        android:id="@+id/linearDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/vwLine">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Dirigido por: Luis Rivera \nAño: 2024"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="2 Temporadas"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:text="Node.js es un entorno de ejecución para JavaScript..."/>
+    </LinearLayout>
+
+    <!-- Título de Episodios -->
+    <TextView
+        android:id="@+id/tvEpisodios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linearDescription"
+        app:layout_constraintStart_toStartOf="@id/linearDescription"
+        android:textColor="@color/white"
+        android:text="Episodios"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <!-- RecyclerView para los episodios -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tvEpisodios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

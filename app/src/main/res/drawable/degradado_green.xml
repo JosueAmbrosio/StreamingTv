@@ -1,0 +1,7 @@
+<!-- res/drawable/degradado.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="@color/black"
+        android:endColor="@color/greenButton"
+        android:angle="270"/>
+</shape>

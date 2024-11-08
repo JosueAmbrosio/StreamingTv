@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/degradado_green"
+    tools:context=".HomeMainActivity">
+
+    <!-- Se utiliza un ScrollView para permitir el desplazamiento del contenido -->
+    <android.widget.ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Banner de la imagen principal -->
+            <ImageView
+                android:id="@+id/bannerImage"
+                android:layout_width="wrap_content"
+                android:layout_height="220dp"
+                android:src="@drawable/node_js"
+                android:scaleType="centerCrop"
+                android:layout_margin="30dp"
+                android:layout_gravity="center"/>
+
+            <!-- Sección de Lenguajes de Programación -->
+            <LinearLayout
+                android:id="@+id/linearCarrusel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Lenguajes de Programación"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Node.js es un lenguaje de programación básico que te ayudará a aprender lo principal en programación."
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- RecyclerView para los Lenguajes de Programación -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewLenguajes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="26dp"
+                android:paddingEnd="26dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"/>
+
+            <!-- Sección de Frameworks -->
+            <LinearLayout
+                android:id="@+id/linearCarruselFrameworks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Frameworks"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Spring Boot, Angular, etc."
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- RecyclerView para los Frameworks -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewFrameworks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="26dp"
+                android:paddingEnd="26dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"/>
+
+        </LinearLayout>
+    </android.widget.ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
