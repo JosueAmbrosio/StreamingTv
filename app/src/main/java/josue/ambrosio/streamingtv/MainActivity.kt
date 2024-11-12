@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var passwordEditText: EditText
     private lateinit var btnLogin: TextView
 
-    private val correctEmail = "grupo.asistente@gmail.com"
+    private val correctEmail = "josue.ambrosio@gmail.com"
     private val correctPassword = "Pollito"
 
     override fun onCreate(savedInstanceState: Bundle?) {

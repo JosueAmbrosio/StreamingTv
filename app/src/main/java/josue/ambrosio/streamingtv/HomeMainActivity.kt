@@ -65,10 +65,10 @@ class HomeMainActivity : AppCompatActivity() {
         recyclerViewCursosAccesibles = findViewById(R.id.recyclerViewCursosAccesibles)
         recyclerViewCursosAccesibles.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         adapterCursosAccesibles = CourseAdapter(
-            arrayOf(R.drawable.mean, R.drawable.mean, R.drawable.mean, R.drawable.mean, R.drawable.mean), // Misma imagen
-            arrayOf("Full Stack", "Selenium", "Django", "Ruby on Rails", "Android Development")
+            arrayOf(R.drawable.mean, R.drawable.panda, R.drawable.sele, R.drawable.aws, R.drawable.docker), // Misma imagen
+            arrayOf("Full Stack", "Analizis de datos", "Selenium", "AWS la Nube", "DevOps con docker")
         ) { position ->
-            val courseName = arrayOf("Full Stack", "Selenium", "Django", "Ruby on Rails", "Android Development")[position]
+            val courseName = arrayOf("Full Stack", "Analizis de datos", "Selenium", "AWS la Nube", "DevOps con docker")[position]
             Toast.makeText(this, "Selected Accessible Course: $courseName", Toast.LENGTH_SHORT).show()
         }
         recyclerViewCursosAccesibles.adapter = adapterCursosAccesibles
@@ -77,10 +77,10 @@ class HomeMainActivity : AppCompatActivity() {
         recyclerViewCursosUltimamente = findViewById(R.id.recyclerViewCursosUltimamente)
         recyclerViewCursosUltimamente.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         adapterCursosUltimamente = CourseAdapter(
-            arrayOf(R.drawable.mean, R.drawable.mean, R.drawable.mean, R.drawable.mean, R.drawable.mean), // Misma imagen
-            arrayOf("Desarrollo Web", "Análisis Datos", "Java", "PHP", "C#")
+            arrayOf(R.drawable.react, R.drawable.panda, R.drawable.java_avanzado, R.drawable.aws, R.drawable.nodejs), // Misma imagen
+            arrayOf("Desarrollo Web", "Análisis Datos", "Java Avanzado", "AWS la Nube", "Node.js para Desarrollo")
         ) { position ->
-            val courseName = arrayOf("Desarrollo Web", "Análisis Datos", "Java", "PHP", "C#")[position]
+            val courseName = arrayOf("Desarrollo Web", "Análisis Datos", "Java Avanzado", "AWS la Nube", "Node.js para Desarrollo")[position]
             Toast.makeText(this, "Selected Recently Added Course: $courseName", Toast.LENGTH_SHORT).show()
         }
         recyclerViewCursosUltimamente.adapter = adapterCursosUltimamente
@@ -89,10 +89,10 @@ class HomeMainActivity : AppCompatActivity() {
         recyclerViewTop10 = findViewById(R.id.recyclerViewTop10)
         recyclerViewTop10.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         adapterTop10 = CourseAdapter(
-            arrayOf(R.drawable.mean, R.drawable.mean, R.drawable.mean, R.drawable.mean, R.drawable.mean), // Misma imagen
-            arrayOf("C++", "Python", "JavaScript", "Go", "Kotlin")
+            arrayOf(R.drawable.nodejs, R.drawable.py, R.drawable.react, R.drawable.bd, R.drawable.seguridad), // Misma imagen
+            arrayOf("Node.js para Desarrollo", "Introducción al Machine", "Desarrollo de Aplicaciones", "Bases de Datos diferencias", "Ciberseguridad para Principiantes")
         ) { position ->
-            val courseName = arrayOf("C++", "Python", "JavaScript", "Go", "Kotlin")[position]
+            val courseName = arrayOf("Node.js para Desarrollo del Lado del Servidor", "Introducción al Machine Learning con Python", "Desarrollo de Aplicaciones Móviles con React Native", "Bases de Datos Relacionales y NoSQL", "Ciberseguridad para Principiantes")[position]
             Toast.makeText(this, "Selected Top 10 Course: $courseName", Toast.LENGTH_SHORT).show()
         }
         recyclerViewTop10.adapter = adapterTop10
@@ -101,10 +101,10 @@ class HomeMainActivity : AppCompatActivity() {
         recyclerViewProgramacion = findViewById(R.id.recyclerViewProgramacion)
         recyclerViewProgramacion.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         adapterTopProgramacion = CourseAdapter(
-            arrayOf(R.drawable.mean, R.drawable.mean, R.drawable.mean, R.drawable.mean, R.drawable.mean), // Misma imagen
-            arrayOf("Programación Básica", "Algoritmos", "Estructuras de Datos", "Bases de Datos", "Patrones de Diseño")
+            arrayOf(R.drawable.logo_py, R.drawable.js_principiantes, R.drawable.java_avanzado, R.drawable.ccc, R.drawable.rust), // Misma imagen
+            arrayOf("Python para Principiantes", "JavaScript desde Cero", "Java Avanzado", "C++ para Desarrolladores", "Rust: El Futuro")
         ) { position ->
-            val courseName = arrayOf("Programación Básica", "Algoritmos", "Estructuras de Datos", "Bases de Datos", "Patrones de Diseño")[position]
+            val courseName = arrayOf("Python para Principiantes", "JavaScript desde Cero", "Java Avanzado", "C++ para Desarrolladores", "Rust: El Futuro")[position]
             Toast.makeText(this, "Selected Programming Course: $courseName", Toast.LENGTH_SHORT).show()
         }
         recyclerViewProgramacion.adapter = adapterTopProgramacion
@@ -113,10 +113,10 @@ class HomeMainActivity : AppCompatActivity() {
         recyclerViewFramework = findViewById(R.id.recyclerViewFramework)
         recyclerViewFramework.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         adapterTopFramework = CourseAdapter(
-            arrayOf(R.drawable.mean, R.drawable.mean, R.drawable.mean, R.drawable.mean, R.drawable.mean), // Misma imagen
-            arrayOf("React", "Angular", "Vue.js", "Laravel", "Spring Boot")
+            arrayOf(R.drawable.react, R.drawable.angular, R.drawable.django2, R.drawable.vvue, R.drawable.spring), // Misma imagen
+            arrayOf("React.js: Desarrollo Web", "Angular", "Django", "Vue.js", "Spring Boot")
         ) { position ->
-            val courseName = arrayOf("React", "Angular", "Vue.js", "Laravel", "Spring Boot")[position]
+            val courseName = arrayOf("React: Desarrollo Web", "Angular", "Django", "Vue.js", "Spring Boot")[position]
             Toast.makeText(this, "Selected Framework Course: $courseName", Toast.LENGTH_SHORT).show()
         }
         recyclerViewFramework.adapter = adapterTopFramework

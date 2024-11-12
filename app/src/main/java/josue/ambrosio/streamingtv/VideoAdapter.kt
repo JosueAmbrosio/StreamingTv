@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class VideoAdapter(private val videos: List<Video>) : RecyclerView.Adapter<VideoAdapter.VideoViewHolder>() {
+class VideoAdapter(private val videos: List<Video>, private val isCoursePurchased: Boolean) : RecyclerView.Adapter<VideoAdapter.VideoViewHolder>() {
 
     var focusedPosition = -1 // Para rastrear el ítem enfocado
 
@@ -25,6 +25,12 @@ class VideoAdapter(private val videos: List<Video>) : RecyclerView.Adapter<Video
             holder.itemView.setBackgroundColor(Color.YELLOW) // O cualquier color que te guste
         } else {
             holder.itemView.setBackgroundColor(Color.TRANSPARENT)
+        }
+
+        // No permitir interacción si el curso no está comprado
+        if (!isCoursePurchased) {
+            holder.itemView.isFocusable = false
+            holder.itemView.isEnabled = false
         }
 
         // Manejo del foco

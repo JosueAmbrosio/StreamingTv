@@ -11,6 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/graySoft"
         android:orientation="horizontal"
         android:padding="10dp">
 
@@ -68,14 +69,6 @@
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:gravity="end"/>
-
-            <!-- Icono de candado -->
-            <ImageView
-                android:id="@+id/lockIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/candado"
-                android:layout_marginTop="4dp"/>
 
         </LinearLayout>
 

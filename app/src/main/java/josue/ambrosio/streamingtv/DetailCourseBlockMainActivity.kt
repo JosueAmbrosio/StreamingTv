@@ -3,12 +3,9 @@ package josue.ambrosio.streamingtv
 import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
-import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -25,21 +22,21 @@ class DetailCourseBlockMainActivity : AppCompatActivity() {
 
         // Lista de episodios (puedes sustituir esto por tus propios datos)
         val videos = listOf(
-            Video("Introducción", "44 min", "Descripción del video 1", R.drawable.clase_introduccion_nodejs),
-            Video("Manejo de Asincronía", "35 min", "Descripción del video 2", R.drawable.clase_instalacion_nodejs),
-            Video("Desarrollo de APIs", "50 min", "Descripción del video 3", R.drawable.clase_primera_pagina_nodejs)
+            Video("Introducción", "40 min", "Descripción del video 1", R.drawable.clase_introduccion_nodejs),
+            Video("Manejo de Asincronía", "30 min", "Descripción del video 2", R.drawable.clase_instalacion_nodejs),
+            Video("Desarrollo de APIs", "56 min", "Descripción del video 3", R.drawable.clase_primera_pagina_nodejs)
         )
-
-        // Configura el adaptador
-        val adapter = VideoAdapter(videos)
-        recyclerView.adapter = adapter
 
         // Variable para verificar si el curso está comprado
         val isCoursePurchased = false // Esto debes sustituirlo con la lógica real
 
-        // Deshabilitar el RecyclerView si el curso no ha sido comprado
-        recyclerView.isFocusable = isCoursePurchased
-        recyclerView.isFocusableInTouchMode = isCoursePurchased
+        // Configura el adaptador
+        val adapter = VideoAdapter(videos, isCoursePurchased)
+        recyclerView.adapter = adapter
+
+        // Deshabilitar la interacción, pero permitir el desplazamiento
+        recyclerView.isFocusable = true
+        recyclerView.isFocusableInTouchMode = true
         recyclerView.alpha = if (isCoursePurchased) 1.0f else 0.5f
         recyclerView.isEnabled = isCoursePurchased
 
@@ -61,48 +58,19 @@ class DetailCourseBlockMainActivity : AppCompatActivity() {
         }
 
         // Configuración de los botones
-        val btnReproducir = findViewById<Button>(R.id.btnReproducir)
-        val btnPrecio = findViewById<Button>(R.id.btnPrecio)
-
-        // Resaltar los botones cuando están en foco (con el control remoto)
-        btnReproducir.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                // Cambiar el fondo y hacer el botón más grande cuando tiene foco
-                btnReproducir.background = resources.getDrawable(R.drawable.button_highlighted, null)
-                btnReproducir.scaleX = 1.2f
-                btnReproducir.scaleY = 1.2f
-            } else {
-                // Volver a su tamaño original cuando pierde el foco
-                btnReproducir.background = resources.getDrawable(R.drawable.button_gray, null)
-                btnReproducir.scaleX = 1f
-                btnReproducir.scaleY = 1f
-            }
-        }
+        val btnPrecio = findViewById<TextView>(R.id.btnPagar)
 
         btnPrecio.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 // Cambiar el fondo y hacer el botón más grande cuando tiene foco
-                btnPrecio.background = resources.getDrawable(R.drawable.button_highlighted, null)
-                btnPrecio.scaleX = 1.2f
-                btnPrecio.scaleY = 1.2f
+                btnPrecio.background = resources.getDrawable(R.drawable.button_gray, null)
+                btnPrecio.scaleX = 1.1f
+                btnPrecio.scaleY = 1.1f
             } else {
                 // Volver a su tamaño original cuando pierde el foco
                 btnPrecio.background = resources.getDrawable(R.drawable.button_gray, null)
                 btnPrecio.scaleX = 1f
                 btnPrecio.scaleY = 1f
-            }
-        }
-
-        // Mostrar alerta si el curso no ha sido comprado al intentar reproducir
-        btnReproducir.setOnClickListener {
-            if (!isCoursePurchased) {
-                val dialog = AlertDialog.Builder(this)
-                    .setTitle("Curso no comprado")
-                    .setMessage("Para acceder al contenido, debes comprar el curso.")
-                    .setPositiveButton("Ok") { _, _ -> }
-                    .show()
-            } else {
-                // Lógica para reproducir el contenido si el curso está comprado
             }
         }
 

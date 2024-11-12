@@ -13,26 +13,27 @@
         android:theme="@style/Theme.StreamingTv"
         tools:targetApi="31">
         <activity
+            android:name=".CourseActiveActivity"
+            android:exported="false" />
+        <activity
             android:name=".QrMainActivity"
             android:exported="false" />
         <activity
             android:name=".DetailCourseBlockMainActivity"
-            android:exported="false">
+            android:exported="false"></activity>
+        <activity
+            android:name=".HomeMainActivity"
+            android:exported="true">
 
         </activity>
         <activity
-            android:name=".HomeMainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-
         </activity>
     </application>
 
