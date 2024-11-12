@@ -14,10 +14,10 @@
         android:scaleType="centerCrop" />
 
     <TextView
-        android:id="@+id/image_text"
+        android:id="@+id/course_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="14sp"
         android:gravity="center"
         android:text="Texto del curso" />

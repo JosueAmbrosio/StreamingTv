@@ -20,19 +20,90 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Banner de la imagen principal -->
-            <ImageView
-                android:id="@+id/bannerImage"
-                android:layout_width="wrap_content"
+            <!-- Banner de la imagen principal con texto encima -->
+            <FrameLayout
+                android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:src="@drawable/node_js"
-                android:scaleType="centerCrop"
-                android:layout_margin="30dp"
-                android:layout_gravity="center"/>
+                android:layout_margin="30dp">
 
-            <!-- Sección de Lenguajes de Programación -->
+                <!-- Imagen del banner -->
+                <ImageView
+                    android:id="@+id/bannerImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/node_js"
+                    android:scaleType="centerCrop" />
+
+                <!-- Texto sobre la imagen (parte superior izquierda) -->
+                <LinearLayout
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="start|bottom"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NODE JS"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Node js es un lenguaje de programación básico que te ayudará a aprender lo principal en programación."
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginTop="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/btnVerDetalle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_gray"
+                            android:textColor="@color/black"
+                            android:paddingVertical="8dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:text="Ver detalle"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:focusable="true"
+                            android:clickable="true" />
+
+                        <TextView
+                            android:id="@+id/btnPagar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_gray"
+                            android:textColor="@color/black"
+                            android:paddingVertical="8dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"                            android:layout_weight="1"
+                            android:text="S/120,00"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:focusable="true"
+                            android:clickable="true" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+
+
+            <!-- Sección Cursos Top 10 -->
             <LinearLayout
-                android:id="@+id/linearCarrusel"
+                android:id="@+id/linearTop10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -42,21 +113,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="Lenguajes de Programación"
+                    android:text="Top 10 cursos propulares"
                     android:textStyle="bold"
                     android:textSize="18sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="Node.js es un lenguaje de programación básico que te ayudará a aprender lo principal en programación."
-                    android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- RecyclerView para los Lenguajes de Programación -->
+            <!-- RecyclerView para Top 10 -->
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewLenguajes"
+                android:id="@+id/recyclerViewTop10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="26dp"
@@ -64,9 +129,9 @@
                 android:clipToPadding="false"
                 android:overScrollMode="never"/>
 
-            <!-- Sección de Frameworks -->
+            <!-- Sección Cursos programacion -->
             <LinearLayout
-                android:id="@+id/linearCarruselFrameworks"
+                android:id="@+id/linearProgramacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -76,21 +141,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="Frameworks"
+                    android:text="Lenguajes de Programación Básicos y Avanzados"
                     android:textStyle="bold"
                     android:textSize="18sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="Spring Boot, Angular, etc."
-                    android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- RecyclerView para los Frameworks -->
+            <!-- RecyclerView para programacion -->
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewFrameworks"
+                android:id="@+id/recyclerViewProgramacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="26dp"
@@ -98,6 +157,89 @@
                 android:clipToPadding="false"
                 android:overScrollMode="never"/>
 
+            <!-- Sección Cursos framework -->
+            <LinearLayout
+                android:id="@+id/linearFramework"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Frameworks para Desarrolladores"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <!-- RecyclerView para framework -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewFramework"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="26dp"
+                android:paddingEnd="26dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"/>
+
+
+            <!-- Sección Cursos Más Accesibles -->
+            <LinearLayout
+                android:id="@+id/linearCursosAccesibles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Cursos Más Accesibles"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <!-- RecyclerView para los Cursos Más Accesibles -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCursosAccesibles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="26dp"
+                android:paddingEnd="26dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"/>
+
+            <!-- Sección Cursos Agregados Últimamente -->
+            <LinearLayout
+                android:id="@+id/linearCursosUltimamente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Cursos Agregados Últimamente"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!-- RecyclerView para los Cursos Agregados Últimamente -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCursosUltimamente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="26dp"
+                android:paddingEnd="26dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"/>
         </LinearLayout>
     </android.widget.ScrollView>
 

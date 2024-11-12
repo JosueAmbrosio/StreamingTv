@@ -17,6 +17,11 @@
             android:exported="false" />
         <activity
             android:name=".DetailCourseBlockMainActivity"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".HomeMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,11 +30,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeMainActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

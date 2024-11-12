@@ -56,6 +56,6 @@ class ImageAdapter(private val imageResIds: IntArray, private val courseNames: A
 
     inner class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imageView: ImageView = itemView.findViewById(R.id.image_view)
-        var textView: TextView = itemView.findViewById(R.id.image_text)  // Referencia al TextView
+        var textView: TextView = itemView.findViewById(R.id.course_name)  // Referencia al TextView
     }
 }

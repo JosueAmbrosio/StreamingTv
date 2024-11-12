@@ -41,33 +41,38 @@
             android:text="INICIA SESIÓN" />
 
         <EditText
+            android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="10px"
             android:layout_marginBottom="20px"
             android:background="@drawable/input_white"
             android:gravity="center"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:hint="Correo Electronico" />
 
         <EditText
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="10px"
             android:layout_marginTop="20px"
             android:textColor="@color/white"
             android:gravity="center"
+            android:inputType="textPassword"
             android:background="@drawable/input_white"
             android:hint="Contraseña" />
 
-        <Button
+        <TextView
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_green"
             android:textColor="@color/white"
             android:layout_marginTop="30px"
-            android:text="Iniciar sesión" />
+            android:text="Iniciar sesión"
+            android:gravity="center"
+            android:paddingVertical="15dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
