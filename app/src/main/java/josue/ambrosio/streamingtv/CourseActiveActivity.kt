@@ -1,6 +1,7 @@
 package josue.ambrosio.streamingtv
-
+import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,5 +20,13 @@ class CourseActiveActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = CourseActiveAdapter(videoList)
+
+        val btnReproducir = findViewById<TextView>(R.id.btnReproducir)
+        btnReproducir.setOnClickListener {
+            // Abrir VideoViewActivity con un video predeterminado
+            val intent = Intent(this, VideoViewActivity::class.java)
+            intent.putExtra("VIDEO_URL", "https://www.example.com/video1.mp4") // Cambia a la URL de tu video
+            startActivity(intent)
+        }
     }
 }

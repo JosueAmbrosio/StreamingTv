@@ -1,11 +1,11 @@
 package josue.ambrosio.streamingtv
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class CourseActiveAdapter(
@@ -19,9 +19,19 @@ class CourseActiveAdapter(
         val videoDuration: TextView = itemView.findViewById(R.id.videoDuration)
 
         init {
+            // Manejar el click en cada ítem del RecyclerView
             itemView.setOnClickListener {
-                // Al hacer clic en el video, mostrar mensaje de carga
-                Toast.makeText(itemView.context, "Cargando video...", Toast.LENGTH_SHORT).show()
+                val context = itemView.context
+                val intent = Intent(context, VideoViewActivity::class.java)
+
+                // Pasar datos del video seleccionado a VideoViewActivity
+                val video = videoList[adapterPosition] // Obtener el video actual
+                intent.putExtra("VIDEO_TITLE", video.title)
+                intent.putExtra("VIDEO_DESCRIPTION", video.description)
+                intent.putExtra("VIDEO_DURATION", video.duration)
+                intent.putExtra("VIDEO_IMAGE", video.imageResId)
+
+                context.startActivity(intent)
             }
         }
     }

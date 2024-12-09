@@ -1,0 +1,176 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <!-- VideoView para reproducir el video -->
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true" />
+
+    <!-- Controles de video -->
+    <RelativeLayout
+        android:id="@+id/controlBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#80000000"
+        android:padding="10dp"
+        android:visibility="visible">
+
+        <!-- Botón de Retroceder -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/rewindButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:icon="@android:drawable/ic_media_rew"
+            android:iconTint="@android:color/white"
+            android:contentDescription="Retroceder"
+            android:layout_alignParentStart="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+        <!-- Botón de Reproducir/Pausar -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/playPauseButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:icon="@android:drawable/ic_media_play"
+            android:iconTint="@android:color/white"
+            android:contentDescription="Reproducir/Pausar"
+            android:layout_centerInParent="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+        <!-- Botón de Adelantar -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/forwardButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:icon="@android:drawable/ic_media_ff"
+            android:iconTint="@android:color/white"
+            android:contentDescription="Adelantar"
+            android:focusable="true"
+            android:layout_alignParentEnd="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+    </RelativeLayout>
+
+    <!-- Barra de progreso del video -->
+    <SeekBar
+        android:id="@+id/videoProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="90dp"
+        android:max="100"
+        android:progress="0"
+        android:indeterminate="false"
+        android:visibility="visible" />
+
+    <!-- Texto para el tiempo actual y total del video -->
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:text="00:00 / 00:00"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Botón de Salir -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/exitButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:icon="@drawable/ic_exit"
+        android:contentDescription="Exit"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:focusable="true"
+        android:nextFocusDown="@id/playPauseButton"
+        android:nextFocusUp="@id/exitButton" />
+
+    <!-- Botón de persona hablando -->
+    <ImageButton
+        android:id="@+id/personSpeakingButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_microfono"
+        android:contentDescription="Información sobre Node.js"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:focusable="true"/>
+
+    <!-- Ventana emergente con la información sobre Node.js -->
+    <!-- Ventana emergente con la información sobre Node.js -->
+    <LinearLayout
+        android:id="@+id/infoPopup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:background="#7A7A7A"
+        android:padding="20dp"
+        android:visibility="gone"
+        android:elevation="10dp"
+        android:alpha="0.9">
+
+        <TextView
+            android:id="@+id/infoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Qué es Node.js?"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/infoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Node.js es un entorno de ejecución para JavaScript que permite ejecutar código JavaScript fuera del navegador, en el servidor. Está basado en el motor V8 de Google Chrome y es muy eficiente para aplicaciones en tiempo real."
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="20dp"
+            android:lineSpacingExtra="8dp"/>
+
+        <TextView
+            android:id="@+id/exampleTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ejemplo de uso:"
+            android:textSize="18sp"
+            android:textColor="#FF6347"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/exampleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="const http = require('http');\nhttp.createServer((req, res) => {\n  res.write('¡Hola, mundo!');\n  res.end();\n}).listen(8080);\n\nEste código crea un servidor básico en Node.js que responde con '¡Hola, mundo!' a las solicitudes."
+            android:textSize="14sp"
+            android:textColor="#D1D103"
+            android:layout_marginBottom="20dp"
+            android:lineSpacingExtra="6dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cerrar"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:background="@android:color/holo_red_dark"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+</RelativeLayout>
